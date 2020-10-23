@@ -64,6 +64,6 @@ draw(screen)
 *screen* - экран, где рисовать изображение  
 move(step)  
 *step* - на сколько двигается  
-g_move(step, ystep) 
-*step* - на сколько двигается по X  
+g_move(step, ystep)  
+*step* - на сколько двигается по X   
 *ystep* - на сколько двигается по Y  
