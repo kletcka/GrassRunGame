@@ -1,6 +1,6 @@
 # GrassRunGame  
 Игра про несчастную траву 
-![ddd](https://avatars.mds.yandex.net/get-pdb/2824544/0052bf22-5115-4f6f-8503-228c3bdda57b/s1200)
+![ddd](https://avatars.mds.yandex.net/get-pdb/2979035/e14cd920-1227-4027-8b05-c759185575d3/s1200)
 ## Как играть
   
 Начало игры:  
