@@ -14,7 +14,6 @@ clock = pygame.time.Clock()
 #переменные
 done = False
 mode = True
-score = 0
 max_x = 0
 cur_x = 0
 
@@ -28,6 +27,8 @@ def up_list():
     global fields, cars
     fields = []
     cars = []
+    max_x = 0
+    cur_x = 0
     for i in range(1,9):
         cars.append(objects.Car(i*100-100))
 
@@ -73,6 +74,9 @@ while not done:
                 i.gmove(2, 0)
 
 
+        
+
+
 
         for i in fields:
             i.draw(screen)
@@ -85,6 +89,7 @@ while not done:
 
         hero.draw(screen)
 
+        
         font = pygame.font.Font(pygame.font.match_font('arial'), 30)
         text_surface = font.render(f'Score:{max_x//100}', True, (255, 255, 255))
         text_rect = text_surface.get_rect()
@@ -101,7 +106,11 @@ while not done:
         text_surface = font.render(f'Нажмите                       чтобы продожить', True, (255, 255, 255))
         text_rect = text_surface.get_rect()
         text_rect.midtop = (300, 500)
+        text_surface1 = font.render(f'Ваш счет:{max_x//100}', True, (255, 255, 255))
+        text_rect1 = text_surface.get_rect()
+        text_rect1.midtop = (450, 50)
         screen.blit(text_surface, text_rect)
+        screen.blit(text_surface1, text_rect1)
         space.draw(screen)
 
 
