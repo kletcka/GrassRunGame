@@ -3,21 +3,21 @@
   
   
 ## main.py
-  
-**Переменные** 
-WIDTH - int; Ширина экрана  
-HEIGHT - int; Высота экрана  
+   
+**Переменные**   
+WIDTH - int; Ширина экрана   
+HEIGHT - int; Высота экрана   
 screen - ?; экран  
 clock - ?; таймер  
 done - boolean; для цикла  
 mode - boolean; режим меню/игра  
 max_x = int; счет  
 cur_x = int; тек. позиция  
-hero  - object; трава  
-g_o - object; надпись Game Over
-spacen - object; изображение пробела
-fields - list; поля
-cars - list; машины
+hero  - object; трава   
+g_o - object; надпись Game Over  
+spacen - object; изображение пробела  
+fields - list; поля  
+cars - list; машины  
 
 **Функции**
 up_list() - пересоздание fields и cars
