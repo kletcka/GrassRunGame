@@ -1,6 +1,6 @@
 # GrassRunGame  
 Игра про несчастную траву 
-![ddd](https://drive.google.com/file/d/1zzjt0e-tZ-Z_0gj-OolD5Y31TlpAcX4f/view?usp=sharing)
+![ddd](https://avatars.mds.yandex.net/get-pdb/2824544/0052bf22-5115-4f6f-8503-228c3bdda57b/s1200)
 ## Как играть
   
 Начало игры:  
