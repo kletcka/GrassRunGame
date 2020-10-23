@@ -27,9 +27,9 @@ hero  - object; трава
 g_o - object; надпись Game Over  
 spacen - object; изображение пробела  
 fields - list; поля  
-cars - list; машины  
-  
-**Функции**
+cars - list; машины   
+   
+**Функции**  
 up_list() - пересоздание fields и cars
 
 ## objects.py  
