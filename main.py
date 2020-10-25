@@ -16,6 +16,7 @@ done = False
 mode = True
 max_x = 0
 cur_x = 0
+win = False
 
 #объекты и списки объектов
 hero = objects.Hero()
@@ -24,7 +25,7 @@ space = objects.Space()
 fields = []
 cars = []
 def up_list():
-    global fields, cars
+    global fields, cars, max_x, cur_x
     fields = []
     cars = []
     max_x = 0
@@ -86,27 +87,58 @@ while not done:
             i.move(6)
             if hero.rect.colliderect(i.rect):
                 mode = False
-
+                win = False
+                up_list()
+        if  max_x == 100000:
+            mode = False
+            win = True
+            up_list()
         hero.draw(screen)
 
         
         font = pygame.font.Font(pygame.font.match_font('arial'), 30)
-        text_surface = font.render(f'Score:{max_x//100}', True, (255, 255, 255))
+        text_surface = font.render(f'Score: {max_x//100}', True, (255, 255, 255))
         text_rect = text_surface.get_rect()
         text_rect.midtop = (300, 0)
         screen.blit(text_surface, text_rect)
-            
-    if mode == False:
+    if mode == False and win == True:
         clock.tick(30)
 
+        font = pygame.font.Font(pygame.font.match_font('arial'), 30)
+        text_surface = font.render(f'Нажмите                       чтобы продожить', True, (255, 255, 255))
+        text_rect = text_surface.get_rect()
+        text_rect.midtop = (300, 500)
+        text_surface1 = font.render(f'Ваш счет: {max_x//100}', True, (255, 255, 255))
+        text_rect1 = text_surface.get_rect()
+        text_rect1.midtop = (450, 50)
+        screen.blit(text_surface, text_rect)
+        screen.blit(text_surface1, text_rect1)
+        font = pygame.font.Font(pygame.font.match_font('arial'), 70)
+        text_surface = font.render(f'Вы выиграли!', True, (255, 255, 255))
+        text_rect = text_surface.get_rect()
+        text_rect.midtop = (300, 200)
+        screen.blit(text_surface, text_rect)
+        space.draw(screen)
 
+
+        for event in pygame.event.get(): 
+            if event.type == pygame.QUIT:
+                done = True
+            if pygame.mouse.get_pressed()[0] == 1 and space.rect.collidepoint(pygame.mouse.get_pos()):
+                mode = True
+                
+
+        if pygame.key.get_pressed()[pygame.K_SPACE]:
+            mode = True
+    if mode == False and win == False:
+        clock.tick(30)
 
         g_o.draw(screen)
         font = pygame.font.Font(pygame.font.match_font('arial'), 30)
         text_surface = font.render(f'Нажмите                       чтобы продожить', True, (255, 255, 255))
         text_rect = text_surface.get_rect()
         text_rect.midtop = (300, 500)
-        text_surface1 = font.render(f'Ваш счет:{max_x//100}', True, (255, 255, 255))
+        text_surface1 = font.render(f'Ваш счет: {max_x//100}', True, (255, 255, 255))
         text_rect1 = text_surface.get_rect()
         text_rect1.midtop = (450, 50)
         screen.blit(text_surface, text_rect)
@@ -119,12 +151,12 @@ while not done:
                 done = True
             if pygame.mouse.get_pressed()[0] == 1 and space.rect.collidepoint(pygame.mouse.get_pos()):
                 mode = True
-                cars = []
-                up_list()
+                
 
         if pygame.key.get_pressed()[pygame.K_SPACE]:
             mode = True
-            up_list()
+
+
     pygame.display.flip()
     
 
