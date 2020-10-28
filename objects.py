@@ -1,7 +1,6 @@
 import pygame
 import random
 import os
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 class Hero(pygame.sprite.Sprite):
     def __init__(self):
         self.image_adress = os.path.join('Game', 'grass.png')
