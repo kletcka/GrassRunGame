@@ -28,8 +28,7 @@ def up_list():
     global fields, cars, max_x, cur_x
     fields = []
     cars = []
-    max_x = 0
-    cur_x = 0
+
     for i in range(1,9):
         cars.append(objects.Car(i*100-100))
 
@@ -126,10 +125,14 @@ while not done:
                 done = True
             if pygame.mouse.get_pressed()[0] == 1 and space.rect.collidepoint(pygame.mouse.get_pos()):
                 mode = True
+                max_x = 0
+                cur_x = 0
                 
 
         if pygame.key.get_pressed()[pygame.K_SPACE]:
             mode = True
+            max_x = 0
+            cur_x = 0
     if mode == False and win == False:
         clock.tick(30)
 
@@ -151,15 +154,16 @@ while not done:
                 done = True
             if pygame.mouse.get_pressed()[0] == 1 and space.rect.collidepoint(pygame.mouse.get_pos()):
                 mode = True
+                max_x = 0
+                cur_x = 0
                 
 
         if pygame.key.get_pressed()[pygame.K_SPACE]:
             mode = True
-
+            max_x = 0
+            cur_x = 0
 
     pygame.display.flip()
     
-
-
 
 pygame.quit()
